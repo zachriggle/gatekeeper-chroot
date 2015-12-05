@@ -41,6 +41,8 @@ $ echo *
 bin dev etc flag home lib lib32 lib64 proc sbin tmp usr
 $ echo bin/*
 bin/sh
+$ cat flag
+sh: cat: command not found
 $ while read line; do echo $line; done < flag
 Flag{Hurray_chroots_are_fun_amirite?}
 ```
