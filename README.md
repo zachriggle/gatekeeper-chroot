@@ -38,7 +38,9 @@ $ ./chroot-empty empty-chroot sh
 $ ls -la
 sh: ls: command not found
 $ echo *
-bin dev etc home lib lib32 lib64 proc sbin tmp usr
+bin dev etc flag home lib lib32 lib64 proc sbin tmp usr
 $ echo bin/*
 bin/sh
+sh-4.3$ while read line; do echo $line; done < flag
+Flag{Hurray_chroots_are_fun_amirite?}
 ```
