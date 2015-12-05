@@ -11,8 +11,10 @@ int main(int argc, char** argv) {
 
     chroot_add_uid_mapping(getuid(), getuid());
     chroot_add_gid_mapping(getgid(), getgid());
+#ifndef EMPTY_CHROOT
     chroot_add_bind_defaults();
     chroot_add_bind("home", "/home", 0);
+#endif
     chroot_invoke(argv[1]);
 
     execvp(argv[2], &argv[2]);
