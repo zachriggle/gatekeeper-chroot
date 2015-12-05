@@ -6,6 +6,7 @@ Starts the target process in a chroot environment.  Most common world-readable r
 ## usage
 
 ```sh
+$ make
 $ ./chroot $(mktemp -d) /bin/sh
 $ pwd
 /
