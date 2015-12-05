@@ -3,6 +3,8 @@
 
 Starts the target process in a chroot environment.  Most common world-readable resources can be bind-mounted so that we don't have to copy libraries around.
 
+If you want a more restrictive chroot, just modify `main.c` to remove the `chroot_add_bind` statements.  If you want to add additional directories to the chroot, just add `chroot_add_bind` statements.
+
 ## usage
 
 ```sh
