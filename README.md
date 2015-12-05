@@ -41,6 +41,6 @@ $ echo *
 bin dev etc flag home lib lib32 lib64 proc sbin tmp usr
 $ echo bin/*
 bin/sh
-sh-4.3$ while read line; do echo $line; done < flag
+$ while read line; do echo $line; done < flag
 Flag{Hurray_chroots_are_fun_amirite?}
 ```
