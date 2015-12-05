@@ -5,11 +5,16 @@ Starts the target process in a chroot environment.  Most common world-readable r
 
 If you want a more restrictive chroot, just modify `main.c` to remove the `chroot_add_bind` statements.  If you want to add additional directories to the chroot, just add `chroot_add_bind` statements.
 
+## building
+
+Just run `make`.
+
 ## usage
 
+If you want a full chroot, with some directories mounted (e.g. `/home`):
+
 ```sh
-$ make
-$ ./chroot $(mktemp -d) /bin/sh
+$ ./chroot-full $(mktemp -d) /bin/sh
 $ pwd
 /
 $ echo $$
@@ -24,4 +29,16 @@ $ find /tmp
 /tmp
 $ crontab -e
 /var/spool/cron: No such file or directory
+```
+
+If you want a very sparse, pre-prepared `chroot`, use `chroot-empty` instead.
+
+```sh
+$ ./chroot-empty empty-chroot sh
+$ ls -la
+sh: ls: command not found
+$ echo *
+bin dev etc home lib lib32 lib64 proc sbin tmp usr
+$ echo bin/*
+bin/sh
 ```
